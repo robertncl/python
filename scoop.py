@@ -16,7 +16,6 @@ class Bowl():
     def __repr__(self):
         return '\n'.join(s.flavor for s in self.scoops)
  
- 
 s1 = Scoop('chocolate')
 s2 = Scoop('vanilla')
 s3 = Scoop('persimmon')

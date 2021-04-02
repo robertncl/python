@@ -22,5 +22,3 @@ deck = FrenchDeck()
 
 
 
-print choice(deck)
-
