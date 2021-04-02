@@ -1,4 +1,5 @@
 import collections
+from random import choice
 
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
@@ -18,5 +19,8 @@ class FrenchDeck:
 
 deck = FrenchDeck()
 
-for card in reversed(deck):
-    print(card)
+
+
+
+print choice(deck)
+
