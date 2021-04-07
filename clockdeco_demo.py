@@ -1,5 +1,5 @@
 import time
-from clockdeco0 import clock
+from clockdeco import clock
 
 
 @clock
