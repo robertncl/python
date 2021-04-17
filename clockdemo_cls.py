@@ -17,3 +17,4 @@ class clock:
             result = repr(_result)
             print(self.fmt.format(**locals()))
             return _result
+        return clocked
