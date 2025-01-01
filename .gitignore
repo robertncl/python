@@ -1,3 +1,4 @@
 .vscode/settings.json
 workspace.code-workspace
 myenv
+__pycache__
