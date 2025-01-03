@@ -14,7 +14,7 @@ client = AzureOpenAI(
 deployment_name = "davinci-002"  
     
   # Send a completion call to generate an answer  
-prompt = "what is the purpose of life?"  
+prompt = "hwo to improve LLM generation speed?"  
 response = client.completions.create(  
       model=deployment_name,  
       prompt=prompt,  
