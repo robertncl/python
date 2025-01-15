@@ -1,5 +1,5 @@
 import os
-from cohereai import Client
+from cohere import Client
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
