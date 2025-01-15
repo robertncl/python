@@ -1,5 +1,5 @@
 import os
-from cohere import Client
+from cohereai import Client
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
@@ -12,8 +12,8 @@ client = Client(
 
 response = client.chat(
     model=model_name,
-    preamble="You are a helpful assistant.",
-    message="What is the specification of your training data?",
+    preamble='You are a helpful assistant.',
+    message='What is the specification of your training data?',
     temperature=1.0,
     max_tokens=5000,
     p=1.0
