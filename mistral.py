@@ -11,9 +11,9 @@ response = client.chat.complete(
     model=model_name,
     messages=[
         SystemMessage(content="You are a helpful assistant."),
-        UserMessage(content="Why did the Ottoman empire fail to reform?"),
+        UserMessage(content="Why did the angular abandon ngmodule?"),
     ],
-    temperature=1.5,
+    temperature=1.0,
     max_tokens=10000,
     top_p=1.0
 )
