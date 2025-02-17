@@ -1,24 +1,36 @@
 # It returns location of x in given array arr  
 # if present, else returns -1 
 def binarySearch(arr, l, r, x):
+    """
+    This function performs a binary search on the given sorted array to find the location of the target value x.
+
+    Parameters:
+    arr (list): The sorted array in which to perform the binary search.
+    l (int): The leftmost index of the search range.
+    r (int): The rightmost index of the search range.
+    x (int): The target value to be searched in the array.
+
+    Returns:
+    int: The index of the target value x in the array if found, otherwise returns -1.
+    """
     while l <= r:
 
-        mid = l + (r - l) / 2 #extracting the middle element from the array
-        mid=int(mid) #it has to be integer
+        mid = l + (r - l) // 2  # extracting the middle element from the array
+        mid = int(mid)  # it has to be integer
 
-        # Check if x is present at mid 
+        # Check if x is present at mid
         if arr[mid] == x:
             return mid
 
-            # If x is greater, ignore left half
+        # If x is greater, ignore left half
         elif arr[mid] < x:
-            l = mid + 1 #l is initialised to the rightmost element of the middle so that the search could be started from there the next time
+            l = mid + 1  # l is initialized to the rightmost element of the middle so that the search could be started from there the next time
 
-        # If x is smaller, ignore right half 
-        elif x<arr[mid]:
-            r = mid - 1 #r is initialised to the leftmost element of the middle so that the search goes till there only the next time
+        # If x is smaller, ignore right half
+        elif x < arr[mid]:
+            r = mid - 1  # r is initialized to the leftmost element of the middle so that the search goes till there only the next time
 
-    # If we reach here, then the element was not present 
+    # If we reach here, then the element was not present
     return -1
 
 
