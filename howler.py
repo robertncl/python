@@ -51,12 +51,26 @@ def get_args():
  
 # --------------------------------------------------
 def main():
-    """Make a jazz noise here"""
- 
+    """
+    Execute the main functionality of the Howler program.
+
+    This function performs the following steps:
+    1. Retrieves command-line arguments.
+    2. Opens the output file (or uses stdout if no file is specified).
+    3. Converts the input text to uppercase.
+    4. Writes the uppercase text to the output.
+    5. Closes the output file handle if one was opened.
+
+    The function doesn't take any parameters as it uses command-line arguments
+    parsed by the get_args() function.
+
+    Returns:
+        None
+    """
     args = get_args()                                                   
     out_fh = open(args.outfile, 'wt') if args.outfile else sys.stdout   
     out_fh.write(args.text.upper() + '\n')                              
-    out_fh.close()                                                      
+    out_fh.close()
  
  
 # --------------------------------------------------
