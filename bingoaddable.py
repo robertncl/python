@@ -1,18 +1,19 @@
-import itertools  
-
+import itertools
+from typing import Any
 from tombola import Tombola
 from bingo import BingoCage
 
 
 class AddableBingoCage(BingoCage):  
+    """A BingoCage that supports addition and in-place addition with other Tombola or iterables."""
 
-    def __add__(self, other):
+    def __add__(self, other: Any) -> 'AddableBingoCage':
         if isinstance(other, Tombola):  
             return AddableBingoCage(self.inspect() + other.inspect())
         else:
             return NotImplemented
 
-    def __iadd__(self, other):
+    def __iadd__(self, other: Any) -> 'AddableBingoCage':
         if isinstance(other, Tombola):
             other_iterable = other.inspect()  
         else:
