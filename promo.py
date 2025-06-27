@@ -1,3 +1,6 @@
+from typing import Callable, List
+from order import Order
+
 Promotion = Callable[[Order], float]  
 
 
