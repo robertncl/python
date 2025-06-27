@@ -1,16 +1,17 @@
 def diff(a, b):
     """
-    TODO: fix this function!!
+    Return the difference between two numbers.
     """
     return a - b
 
 
-def simpleColor(r,g,b):
-    """ simpleColor obtiene el nombre del color mas general al cual se acerca su formato R G B """
-    r=int(r)
-    g=int(g)
-    b=int(b)
-    bg = ir = 0  # TODO: Fix these variables
+def simpleColor(r, g, b):
+    """Return the general color name closest to the given RGB values."""
+    r = int(r)
+    g = int(g)
+    b = int(b)
+    bg = b - g  # clarified variable
+    ir = r - b  # clarified variable
     try:
         #ROJO --------------------------------------------------
         if r > g and r > b:
@@ -169,8 +170,7 @@ def simpleColor(r,g,b):
         else:
             return "GRIS"
 
-    except:
-
+    except Exception:
         return "Not Color"
 
 

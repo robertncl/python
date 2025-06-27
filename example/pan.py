@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from matplotlib import *
+import matplotlib.pyplot as plt
 
 # .........................Series.......................#
 
@@ -68,7 +68,7 @@ print(df[1:4])
 df = pd.DataFrame([[1, 2], [3, 4]], columns=['a', 'b'])
 df2 = pd.DataFrame([[5, 6], [7, 8]], columns=['a', 'b'])
 
-df = df.append(df2)
+df = pd.concat([df, df2], ignore_index=True)
 print(df.head())
 
 # ........Deleting a Row..................#
@@ -76,7 +76,7 @@ print(df.head())
 df = pd.DataFrame([[1, 2], [3, 4]], columns=['a', 'b'])
 df2 = pd.DataFrame([[5, 6], [7, 8]], columns=['a', 'b'])
 
-df = df.append(df2)
+df = pd.concat([df, df2], ignore_index=True)
 
 # Drop rows with label 0
 df = df.drop(0)
@@ -150,7 +150,7 @@ print(df.loc[['a', 'b', 'f', 'h'], ['A', 'C']])
 
 df = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
 # Index slicing
-print(df.ix[:, 'A'])
+print(df.iloc[:, 0])
 
 # ............................statistics......................#
 
