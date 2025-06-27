@@ -1,4 +1,6 @@
-def calc(to_solve):
+import operator
+
+def calc(to_solve: str) -> float:
     """
     Perform a mathematical operation on two numbers.
 
@@ -12,7 +14,6 @@ def calc(to_solve):
 
     Returns:
     float: The result of the mathematical operation.
-
     """
     operations = {'+': operator.add,            
                   '-': operator.sub,
