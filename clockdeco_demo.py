@@ -2,14 +2,15 @@ import time
 from clockdeco import clock
 
 
-@clock
-def snooze(seconds):
+def snooze(seconds: float) -> None:
+    """Sleep for the given number of seconds."""
     time.sleep(seconds)
 
 
 @clock
-def factorial(n):
-    return 1 if n < 2 else n*factorial(n-1)
+def factorial(n: int) -> int:
+    """Return the factorial of n."""
+    return 1 if n < 2 else n * factorial(n - 1)
 
 
 if __name__ == '__main__':
