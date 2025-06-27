@@ -33,3 +33,7 @@ def send_file(filename: str = "mytext.txt", testing: bool = False) -> None:
 
 if __name__ == "__main__":
     send_file()
+
+def send_file(filename: str) -> str:
+    """Return a string indicating the file has been sent."""
+    return f'File {filename} sent.'

@@ -16,3 +16,7 @@ test_chars = [
 for char in test_chars:
     print(f'Trying to output {name(char)}:')
     print(char)
+
+def stdout_check() -> None:
+    """Placeholder for checking stdout."""
+    pass

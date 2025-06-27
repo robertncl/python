@@ -1,3 +1,5 @@
+from typing import Any
+
 class StackOverflowError(BaseException):
     pass
 
@@ -11,8 +13,8 @@ class Stack:
     https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
     """
 
-    def __init__(self, limit: int = 10):
-        self.stack = []
+    def __init__(self, limit: int = 10) -> None:
+        self.stack: list[Any] = []
         self.limit = limit
 
     def __bool__(self) -> bool:
@@ -21,13 +23,13 @@ class Stack:
     def __str__(self) -> str:
         return str(self.stack)
 
-    def push(self, data):
+    def push(self, data: Any) -> None:
         """ Push an element to the top of the stack."""
         if len(self.stack) >= self.limit:
             raise StackOverflowError
         self.stack.append(data)
 
-    def pop(self):
+    def pop(self) -> Any:
         """ Pop an element off of the top of the stack."""
         return self.stack.pop()
 

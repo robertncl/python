@@ -4,6 +4,12 @@ import fractions
 import decimal
 import html
 import numbers
+from typing import Any
+
+@singledispatch
+def fun(arg: Any) -> str:
+    """Default function for singledispatch."""
+    return f'Object: {arg}'
 
 @singledispatch  
 def htmlize(obj: object) -> str:

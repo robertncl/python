@@ -27,3 +27,7 @@ b.add_scoops(s1, s2)
 b.add_scoops(s3)
 b.add_scoops(s4, s5)
 print(b)
+
+def scoop(ice_cream: str) -> str:
+    """Return a string indicating a scoop of the given ice cream flavor."""
+    return f'Scooping {ice_cream}!'
