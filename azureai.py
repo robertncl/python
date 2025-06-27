@@ -1,5 +1,6 @@
 import os
 from openai import AzureOpenAI
+from typing import Any
 
 client = AzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
@@ -27,3 +28,8 @@ response = client.completions.create(
 )
 
 print(prompt + response.choices[0].text)
+
+def analyze_text(text: str) -> Any:
+    """Analyze the given text using Azure AI (placeholder function)."""
+    # Placeholder for Azure AI analysis logic
+    return text
