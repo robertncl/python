@@ -1,18 +1,20 @@
 from array import array
 import math
+from typing import Any
 
 
 class Vector2d:
+    """A simple 2D vector class."""
     typecode = 'd'  
 
-    def __init__(self, x, y):
+    def __init__(self, x: float, y: float) -> None:
         self.x = float(x)    
         self.y = float(y)
 
     def __iter__(self):
         return (i for i in (self.x, self.y))  
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         class_name = type(self).__name__
         return '{}({!r}, {!r})'.format(class_name, *self)  
 
@@ -31,3 +33,14 @@ class Vector2d:
 
     def __bool__(self):
         return bool(abs(self))  
+
+    def __add__(self, other: Any) -> 'Vector2d':
+        if isinstance(other, Vector2d):
+            return Vector2d(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __mul__(self, scalar: float) -> 'Vector2d':
+        return Vector2d(self.x * scalar, self.y * scalar)
+
+    def __rmul__(self, scalar: float) -> 'Vector2d':
+        return self * scalar  

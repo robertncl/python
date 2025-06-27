@@ -14,6 +14,10 @@ def get_string(tokens: str, encoding_name: str) -> str:
     # Decode the tokens
     return encoding.decode(tokens)
 
+def token_to_string(token: int) -> str:
+    """Convert a token (integer) to its string representation."""
+    return str(token)
+
 # Define the input string
 prompt = 'I have a white dog named Champ.'
 

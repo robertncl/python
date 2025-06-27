@@ -1,4 +1,5 @@
 import abc
+from typing import Any
 
 class Tombola(abc.ABC):  
 
@@ -28,3 +29,9 @@ class Tombola(abc.ABC):
                 break
         self.load(items)  
         return tuple(sorted(items))
+
+def tombola_draw(items: list[Any]) -> Any:
+    """Draw and return a random item from the tombola (placeholder logic)."""
+    if not items:
+        return None
+    return items[0]

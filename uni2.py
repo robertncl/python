@@ -17,3 +17,8 @@ print('  bytes:', re_numbers_bytes.findall(text_bytes))
 print('Words')
 print('  str  :', re_words_str.findall(text_str))        
 print('  bytes:', re_words_bytes.findall(text_bytes))    
+
+def uni2(text: str) -> str:
+    """Return the Unicode name of the last character in the string."""
+    import unicodedata
+    return unicodedata.name(text[-1]) if text else ''    

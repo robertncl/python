@@ -194,6 +194,7 @@ import math
 import functools
 import operator
 import itertools  
+from typing import Any
 
 
 class Vector:
@@ -280,3 +281,23 @@ class Vector:
         typecode = chr(octets[0])
         memv = memoryview(octets[1:]).cast(typecode)
         return cls(memv)
+
+class Vector_v2:
+    """A simple 2D vector class (version 2)."""
+    def __init__(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
+
+    def __repr__(self) -> str:
+        return f'Vector_v2({self.x}, {self.y})'
+
+    def __add__(self, other: Any) -> 'Vector_v2':
+        if isinstance(other, Vector_v2):
+            return Vector_v2(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __mul__(self, scalar: float) -> 'Vector_v2':
+        return Vector_v2(self.x * scalar, self.y * scalar)
+
+    def __rmul__(self, scalar: float) -> 'Vector_v2':
+        return self * scalar

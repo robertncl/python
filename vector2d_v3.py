@@ -88,11 +88,12 @@ Tests of hashing:
 
 from array import array
 import math
+from typing import Any
 
 class Vector2d:
     typecode = 'd'
 
-    def __init__(self, x, y):
+    def __init__(self, x: float, y: float) -> None:
         self.__x = float(x)
         self.__y = float(y)
 
@@ -107,7 +108,7 @@ class Vector2d:
     def __iter__(self):
         return (i for i in (self.x, self.y))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         class_name = type(self).__name__
         return '{}({!r}, {!r})'.format(class_name, *self)
 
@@ -149,3 +150,23 @@ class Vector2d:
         typecode = chr(octets[0])
         memv = memoryview(octets[1:]).cast(typecode)
         return cls(*memv)
+
+class Vector2d_v3:
+    """A simple 2D vector class (version 3)."""
+    def __init__(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
+
+    def __repr__(self) -> str:
+        return f'Vector2d_v3({self.x}, {self.y})'
+
+    def __add__(self, other: Any) -> 'Vector2d_v3':
+        if isinstance(other, Vector2d_v3):
+            return Vector2d_v3(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __mul__(self, scalar: float) -> 'Vector2d_v3':
+        return Vector2d_v3(self.x * scalar, self.y * scalar)
+
+    def __rmul__(self, scalar: float) -> 'Vector2d_v3':
+        return self * scalar
