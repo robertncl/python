@@ -19,3 +19,8 @@ def alert_duck(birdie: Duck) -> None:
 def alert_bird(birdie: Bird) -> None:
     """Call quack on a Bird object."""
     birdie.quack()
+
+def bird_sound(bird: str) -> str:
+    """Return the sound made by the given bird."""
+    sounds = {'duck': 'quack', 'chicken': 'cluck', 'crow': 'caw'}
+    return sounds.get(bird.lower(), 'unknown')

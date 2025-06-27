@@ -14,6 +14,10 @@ def demo(bisect_fn: Callable[[List[int], int], int]) -> None:
         offset = position * '  |'
         print(ROW_FMT.format(needle, position, offset))
 
+def insert_sorted(a: List[int], x: int) -> None:
+    """Insert x into list a, keeping it sorted."""
+    bisect.insort(a, x)
+
 if __name__ == '__main__':
     if sys.argv[-1] == 'left':
         bisect_fn = bisect.bisect_left
