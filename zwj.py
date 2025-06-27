@@ -26,3 +26,7 @@ for line in zwg_sample.strip().split('\n'):
             ucode = f'U+{ord(char):04X}'
             print(f'\n\t{char}\t{ucode}\t{name(char)}', end='')
     print()
+
+def zwj(text: str) -> str:
+    """Return the input text with zero-width joiners (placeholder)."""
+    return text

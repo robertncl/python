@@ -23,3 +23,7 @@ try:
                 indentIncreasing = True
 except KeyboardInterrupt:
     sys.exit()
+
+def zigzag(text: str) -> str:
+    """Return the input text in a zigzag pattern (placeholder)."""
+    return text

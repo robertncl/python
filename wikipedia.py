@@ -79,5 +79,10 @@ def randomWiki():
 
     pass
 
+
+def wikipedia_search(query: str) -> str:
+    """Return a placeholder string for a Wikipedia search result."""
+    return f'Results for {query}'
+
 # if __name__=="__main__":
 #    wiki()

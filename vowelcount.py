@@ -15,3 +15,7 @@ for i in range(len(string)):
         vowelscounter = vowelscounter + 1
 
 print(f"\n### {vowelscounter} vowel(s) were found in the string. ###")
+
+def vowel_count(text: str) -> int:
+    """Return the number of vowels in the input text."""
+    return sum(1 for c in text.lower() if c in 'aeiou')
