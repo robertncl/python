@@ -1,5 +1,6 @@
 import json
 import glob
+from typing import Any
 
 def print_scores():
     scores = {}
@@ -20,5 +21,9 @@ def print_scores():
             print(f'\tmin {min_score}')
             print(f'\tmax {max_score}')
             print(f'\taverage {average_score}')
+
+def print_json(data: Any) -> None:
+    """Print the given data as formatted JSON."""
+    print(json.dumps(data, indent=4, sort_keys=True))
 
 print_scores()

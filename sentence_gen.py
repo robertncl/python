@@ -20,4 +20,9 @@ class Sentence:
             yield word  
         return  
 
+def sentence_gen(words: list[str]) -> Iterator[str]:
+    """Yield each word in the list as a sentence (capitalized and with a period)."""
+    for word in words:
+        yield word.capitalize() + '.'
+
 # done! 

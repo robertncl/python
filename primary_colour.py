@@ -1,3 +1,5 @@
+from typing import List
+
 def diff(a, b):
     """
     Return the difference between two numbers.
@@ -180,3 +182,12 @@ def simpleColor(r, g, b):
 if __name__=='__main__':
     import sys
     print(simpleColor(sys.argv[1],sys.argv[2],sys.argv[3]))
+
+def is_primary_colour(colour: str) -> bool:
+    """Return True if the colour is a primary colour (red, blue, yellow)."""
+    return colour.lower() in {'red', 'blue', 'yellow'}
+
+
+def filter_primary_colours(colours: List[str]) -> List[str]:
+    """Return a list of only the primary colours from the input list."""
+    return [c for c in colours if is_primary_colour(c)]

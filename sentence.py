@@ -19,3 +19,7 @@ class Sentence:
 
     def __repr__(self) -> str:
         return 'Sentence(%s)' % reprlib.repr(self.text)  
+
+def sentence(words: list[str]) -> str:
+    """Return a sentence formed by joining a list of words with spaces and capitalizing the first letter."""
+    return ' '.join(words).capitalize() + '.'  
