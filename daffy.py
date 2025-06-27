@@ -1,4 +1,4 @@
-from bird import *
+from bird import Duck, alert, alert_duck, alert_bird
 
 daffy = Duck()
 alert(daffy)       
