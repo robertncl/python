@@ -15,3 +15,7 @@ def alphabetize_names(list_of_dicts: List[Dict[str, str]]) -> List[Dict[str, str
         key=operator.itemgetter('last', 'first'))
 
 print(alphabetize_names(PEOPLE))
+
+def alphabetize(words: list[str]) -> list[str]:
+    """Return a sorted list of words in alphabetical order."""
+    return sorted(words)

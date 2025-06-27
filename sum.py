@@ -6,3 +6,7 @@ def mysum(*numbers: int) -> int:
     return output
 
 print(mysum(10, 20, 30, 40))
+
+def sum_numbers(numbers: list[int]) -> int:
+    """Return the sum of a list of integers."""
+    return sum(numbers)

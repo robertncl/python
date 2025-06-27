@@ -1,9 +1,13 @@
-from typing import List, Any
+from typing import Any
 
-def flatten(mylist: List[List[Any]]) -> List[Any]:
-    """Flatten a list of lists into a single list."""
-    return [one_element
-            for one_sublist in mylist
-            for one_element in one_sublist]
+def flatten(nested_list: list[Any]) -> list[Any]:
+    """Flatten a nested list into a single list."""
+    result = []
+    for sublist in nested_list:
+        if isinstance(sublist, list):
+            result.extend(flatten(sublist))
+        else:
+            result.append(sublist)
+    return result
 
 print(flatten([[1, 2], [3, 4]]))
