@@ -12,3 +12,12 @@ def shave_marks(txt):
 Greek = 'Ζέφυρος, Zéfiro'
 
 print(shave_marks(Greek))
+
+def simplify_fraction(numerator: int, denominator: int) -> tuple[int, int]:
+    """Return the simplified fraction as a tuple (numerator, denominator)."""
+    def gcd(a: int, b: int) -> int:
+        while b:
+            a, b = b, a % b
+        return a
+    g = gcd(numerator, denominator)
+    return numerator // g, denominator // g

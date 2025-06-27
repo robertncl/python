@@ -1,13 +1,27 @@
 from array import array
-from typing import Iterable
+from typing import Iterable, Any
 
 class Vector:
-    """A simple vector class supporting scalar multiplication."""
+    """A simple 2D vector class."""
     typecode = 'd'
 
-    def __init__(self, components: Iterable[float]):
-        """Initialize the vector with an iterable of floats."""
-        self._components = array(self.typecode, components)
+    def __init__(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
+
+    def __repr__(self) -> str:
+        return f'Vector({self.x}, {self.y})'
+
+    def __add__(self, other: Any) -> 'Vector':
+        if isinstance(other, Vector):
+            return Vector(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __mul__(self, scalar: float) -> 'Vector':
+        return Vector(self.x * scalar, self.y * scalar)
+
+    def __rmul__(self, scalar: float) -> 'Vector':
+        return self * scalar
 
     # many methods omitted in book listing, see vector_v7.py
     # in https://github.com/fluentpython/example-code-2e ...

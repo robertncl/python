@@ -1,7 +1,9 @@
 import random
-from typing import Any, Iterable
+from typing import Any, Iterable, Sequence, TypeVar
 
 from randompick import RandomPicker
+
+T = TypeVar('T')
 
 class SimplePicker():
     def __init__(self, items: Iterable) -> None:
@@ -23,3 +25,8 @@ def test_item_type() -> None:
     item = popper.pick()
     assert item in items
     assert isinstance(item, int)
+
+
+def random_pick(seq: Sequence[T]) -> T:
+    """Return a random element from a non-empty sequence."""
+    return random.choice(seq)
