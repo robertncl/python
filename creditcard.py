@@ -44,7 +44,7 @@ class CreditCard:
                 double_it = int(crd_no[i]) * 2
 
                 if len(str(double_it)) == 2:
-                    sum_ += sum([eval(i) for i in str(double_it)])
+                    sum_ += sum([int(d) for d in str(double_it)])
 
                 else:
                     sum_ += double_it
