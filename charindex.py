@@ -19,3 +19,7 @@ def name_index(start: int = 32, end: int = STOP_CODE) -> Dict[str, Set[str]]:
             for word in tokenize(name):
                 index.setdefault(word, set()).add(char)
     return index
+
+def char_index(s: str, char: str) -> int:
+    """Return the index of the first occurrence of char in s, or -1 if not found."""
+    return s.find(char)

@@ -24,5 +24,11 @@ def main(words: list[str]) -> None:
     else:
         print('Please provide words to find.')
 
+def cf(a: int, b: int) -> int:
+    """Return the continued fraction of a and b (greatest common divisor)."""
+    while b:
+        a, b = b, a % b
+    return a
+
 if __name__ == '__main__':
     main(sys.argv[1:])
