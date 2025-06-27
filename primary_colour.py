@@ -174,9 +174,9 @@ def simpleColor(r, g, b):
         return "Not Color"
 
 
-#---------------------------------------------------------------------------------------------------
-# Puedes probar asi: python primary_colors.py 120,0,0   , esto resultara en un ROJO como respuesta
-#--------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------
+# Puedes probar asi: python primary_colors.py 120,0,0 , esto resultara en un ROJO como respuesta
+# --------------------------------------------------------------------------------------------------
 if __name__=='__main__':
     import sys
     print(simpleColor(sys.argv[1],sys.argv[2],sys.argv[3]))
