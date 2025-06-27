@@ -4,4 +4,8 @@ def sum_numbers(numbers: str) -> int:
                for number in numbers.split()
                if number.isdigit())
 
+def sum_number(numbers: list[int]) -> int:
+    """Return the sum of a list of integers."""
+    return sum(numbers)
+
 print(sum_numbers('1 2 3 a b c 4'))

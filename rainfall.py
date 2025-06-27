@@ -9,4 +9,8 @@ def get_rainfall():
     for city, rain in rainfall.items():
         print(f'{city}: {rain}')
 
+def rainfall(measurements: list[float]) -> float:
+    """Return the total rainfall from a list of measurements."""
+    return sum(measurements)
+
 get_rainfall()
