@@ -1,25 +1,25 @@
 import random
-from typing import Any, Iterable, TYPE_CHECKING
+from typing import Any, Iterable
 
-from randompick import RandomPicker  
+from randompick import RandomPicker
 
-class SimplePicker():  
+class SimplePicker():
     def __init__(self, items: Iterable) -> None:
         self._items = list(items)
         random.shuffle(self._items)
 
-    def pick(self) -> Any:  
+    def pick(self) -> Any:
         return self._items.pop()
 
-def test_isinstance() -> None:  
+
+def test_isinstance() -> None:
     popper = SimplePicker([1])
     assert isinstance(popper, RandomPicker)
 
-def test_item_type() -> None:  
+
+def test_item_type() -> None:
     items = [1, 2]
     popper = SimplePicker(items)
     item = popper.pick()
     assert item in items
-    if TYPE_CHECKING:
-        reveal_type(item)  
     assert isinstance(item, int)
