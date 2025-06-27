@@ -1,3 +1,5 @@
+from array import array
+
 class Vector:
     typecode = 'd'
 
