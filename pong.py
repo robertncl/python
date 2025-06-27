@@ -124,3 +124,7 @@ frame.add_button("Restart", reset)
 new_game()
 print()
 frame.start()
+
+def pong() -> None:
+    """Placeholder for pong game logic."""
+    pass

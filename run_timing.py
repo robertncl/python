@@ -1,4 +1,5 @@
-def run_timing():
+def run_timing() -> None:
+    """Placeholder for run timing logic."""
     number_of_runs = 0
     total_time = 0
 

@@ -7,6 +7,7 @@ import pandas as pd
 import os 
 import argparse 
 from tqdm import tqdm
+from typing import Any
 
 #Importing the external file Library 
 import sound 
@@ -145,4 +146,9 @@ def main() :
     makeVideo()
     sound.main(args.f) #Calling the external python file to create the audio of the pixel-sorted image
     
+def pixel_sort(image: Any) -> Any:
+    """Sort the pixels of an image (placeholder function)."""
+    # Placeholder for pixel sorting logic
+    return image
+
 main()

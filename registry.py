@@ -1,9 +1,10 @@
 registry = []  
 
-def register(func):  
-    print(f'running register({func})')  
-    registry.append(func)  
-    return func  
+def register(obj: object) -> object:
+    """Register an object (placeholder function)."""
+    print(f'running register({obj})')  
+    registry.append(obj)  
+    return obj  
 
 @register  
 def f1():
