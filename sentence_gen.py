@@ -1,6 +1,6 @@
 import re
 import reprlib
-from typing import Iterator
+from collections.abc import Iterator
 
 RE_WORD = re.compile(r'\w+')
 
@@ -13,11 +13,10 @@ class Sentence:
         self.words = RE_WORD.findall(text)
 
     def __repr__(self) -> str:
-        return 'Sentence(%s)' % reprlib.repr(self.text)
+        return f'Sentence({reprlib.repr(self.text)})'
 
     def __iter__(self) -> Iterator[str]:
-        for word in self.words:  
-            yield word  
+        yield from self.words  
         return  
 
 def sentence_gen(words: list[str]) -> Iterator[str]:

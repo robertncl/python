@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import typing
-from typing import Sequence, Optional
+from collections.abc import Sequence
 
 
 class Customer(typing.NamedTuple):
@@ -23,7 +23,7 @@ class Order:  # the Context
         self,
         customer: Customer,
         cart: Sequence[LineItem],
-        promotion: Optional['Promotion'] = None,
+        promotion: 'Promotion | None' = None,
     ):
         self.customer = customer
         self.cart = list(cart)

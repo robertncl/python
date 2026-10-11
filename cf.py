@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import sys
 import unicodedata
-from typing import Set
 
 FIRST, LAST = ord(' '), sys.maxunicode
 
 def find(*query_words: str, first: int = FIRST, last: int = LAST) -> None:
     """Find and print Unicode characters whose names contain all query words."""
-    query: Set[str] = {w.upper() for w in query_words}
+    query: set[str] = {w.upper() for w in query_words}
     count = 0
     for code in range(first, last + 1):
         char = chr(code)

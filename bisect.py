@@ -1,20 +1,20 @@
 import bisect
 import sys
-from typing import Callable, List
+from collections.abc import Callable
 
-HAYSTACK: List[int] = [1, 4, 5, 6, 8, 12, 15, 20, 21, 23, 23, 26, 29, 30]
-NEEDLES: List[int] = [0, 1, 2, 5, 8, 10, 22, 23, 29, 30, 31]
+HAYSTACK: list[int] = [1, 4, 5, 6, 8, 12, 15, 20, 21, 23, 23, 26, 29, 30]
+NEEDLES: list[int] = [0, 1, 2, 5, 8, 10, 22, 23, 29, 30, 31]
 
 ROW_FMT = '{0:2d} @ {1:2d}    {2}{0:<2d}'
 
-def demo(bisect_fn: Callable[[List[int], int], int]) -> None:
+def demo(bisect_fn: Callable[[list[int], int], int]) -> None:
     """Demonstrate bisect function with NEEDLES and HAYSTACK."""
     for needle in reversed(NEEDLES):
         position = bisect_fn(HAYSTACK, needle)
         offset = position * '  |'
         print(ROW_FMT.format(needle, position, offset))
 
-def insert_sorted(a: List[int], x: int) -> None:
+def insert_sorted(a: list[int], x: int) -> None:
     """Insert x into list a, keeping it sorted."""
     bisect.insort(a, x)
 

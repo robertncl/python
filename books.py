@@ -1,11 +1,11 @@
-from typing import TypedDict, List
+from typing import TypedDict
 import json
 
 class BookDict(TypedDict):
     """A dictionary type for representing a book."""
     isbn: str
     title: str
-    authors: List[str]
+    authors: list[str]
     pagecount: int
 
 def book_titles(books: list[dict[str, str]]) -> list[str]:

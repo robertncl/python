@@ -1,5 +1,6 @@
 from collections import Counter
-from typing import Iterable, Hashable, TypeVar
+from typing import TypeVar
+from collections.abc import Iterable, Hashable
 
 HashableT = TypeVar('HashableT', bound=Hashable)
 

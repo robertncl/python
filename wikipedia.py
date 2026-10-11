@@ -1,4 +1,3 @@
-from __future__ import print_function
 
 import wikipedia as wk
 from bs4 import BeautifulSoup

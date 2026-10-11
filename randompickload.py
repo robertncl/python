@@ -1,7 +1,8 @@
 from typing import Protocol, runtime_checkable
 from randompick import RandomPicker
 import random
-from typing import Sequence, TypeVar
+from typing import TypeVar
+from collections.abc import Sequence
 
 @runtime_checkable
 class LoadableRandomPicker(RandomPicker, Protocol):

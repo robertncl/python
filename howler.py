@@ -68,7 +68,7 @@ def main():
         None
     """
     args = get_args()                                                   
-    out_fh = open(args.outfile, 'wt') if args.outfile else sys.stdout   
+    out_fh = open(args.outfile, 'w') if args.outfile else sys.stdout   
     out_fh.write(args.text.upper() + '\n')                              
     out_fh.close()
  

@@ -1,5 +1,5 @@
 import unittest
-from typing import Iterator
+from collections.abc import Iterator
 from charindex import tokenize
 
 class TestTokenize(unittest.TestCase):

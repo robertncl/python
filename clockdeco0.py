@@ -1,5 +1,6 @@
 import time
-from typing import Callable, Any
+from typing import Any
+from collections.abc import Callable
 
 def clock(func: Callable) -> Callable:
     """A simple decorator that prints the elapsed time and arguments of the decorated function."""

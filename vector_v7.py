@@ -1,5 +1,6 @@
 from array import array
-from typing import Iterable, Any
+from typing import Any
+from collections.abc import Iterable
 
 class Vector:
     """A simple 2D vector class."""

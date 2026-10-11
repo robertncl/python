@@ -1,5 +1,6 @@
 import time
-from typing import Callable, Any
+from typing import Any
+from collections.abc import Callable
 
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 

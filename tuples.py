@@ -1,5 +1,4 @@
 import operator
-from typing import List, Tuple
 
 PEOPLE = [
     ('Donald', 'Trump', 7.85),
@@ -7,7 +6,7 @@ PEOPLE = [
     ('Jinping', 'Xi', 10.603)
 ]
 
-def format_sort_records(list_of_tuples: List[Tuple[str, str, float]]) -> List[str]:
+def format_sort_records(list_of_tuples: list[tuple[str, str, float]]) -> list[str]:
     """Return a list of formatted strings sorted by last, then first name."""
     output = []
     template = '{1:10} {0:10} {2:5.2f}'

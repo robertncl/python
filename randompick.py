@@ -1,11 +1,12 @@
 import random
-from typing import Any, Iterable, Sequence, TypeVar
+from typing import Any, TypeVar
+from collections.abc import Iterable, Sequence
 
 from randompick import RandomPicker
 
 T = TypeVar('T')
 
-class SimplePicker():
+class SimplePicker:
     def __init__(self, items: Iterable) -> None:
         self._items = list(items)
         random.shuffle(self._items)

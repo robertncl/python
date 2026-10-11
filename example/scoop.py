@@ -1,8 +1,8 @@
-class Scoop():
+class Scoop:
     def __init__(self, flavor):
         self.flavor = flavor
  
-class Bowl():
+class Bowl:
     max_scoops = 3                                      
 
     def __init__(self):

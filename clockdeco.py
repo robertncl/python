@@ -1,6 +1,7 @@
 import time
 import functools
-from typing import Callable, Any
+from typing import Any
+from collections.abc import Callable
 
 
 def clock(func: Callable) -> Callable:

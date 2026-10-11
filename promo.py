@@ -1,4 +1,4 @@
-from typing import Callable, List
+from collections.abc import Callable
 from order import Order
 
 Promotion = Callable[[Order], float]
@@ -8,7 +8,7 @@ def promotion(promo: Promotion) -> Promotion:
     promos.append(promo)
     return promo
 
-promos: List[Promotion] = []
+promos: list[Promotion] = []
 
 @promotion
 def fidelity(order: Order) -> float:
