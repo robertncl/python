@@ -1,5 +1,8 @@
 # Conway's Game of Life
-import random, time, copy
+import copy
+import random
+import time
+
 WIDTH = 60
 HEIGHT = 20
 

@@ -1,3 +1,8 @@
+from typing import TYPE_CHECKING, reveal_type
+
+from books import from_json, to_xml
+
+
 def demo() -> None:
     """
     Demonstrates the conversion of JSON to a dictionary and then to XML.
@@ -18,13 +23,13 @@ def demo() -> None:
          "flavor": "pistachio",
          "authors": true}
     """
-    not_book = from_json(NOT_BOOK_JSON)  
-    if TYPE_CHECKING:  
+    not_book = from_json(NOT_BOOK_JSON)
+    if TYPE_CHECKING:
         reveal_type(not_book)
         reveal_type(not_book['authors'])
 
-    print(not_book)  
-    print(not_book['flavor'])  
+    print(not_book)
+    print(not_book['flavor'])
 
-    xml = to_xml(not_book)  
+    xml = to_xml(not_book)
     print(xml)

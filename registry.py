@@ -1,12 +1,12 @@
-registry = []  
+registry = []
 
 def register(obj: object) -> object:
     """Register an object (placeholder function)."""
-    print(f'running register({obj})')  
-    registry.append(obj)  
-    return obj  
+    print(f'running register({obj})')
+    registry.append(obj)
+    return obj
 
-@register  
+@register
 def f1():
     print('running f1()')
 
@@ -14,10 +14,10 @@ def f1():
 def f2():
     print('running f2()')
 
-def f3():  
+def f3():
     print('running f3()')
 
-def main():  
+def main():
     print('running main()')
     print('registry ->', registry)
     f1()
@@ -25,4 +25,4 @@ def main():
     f3()
 
 if __name__=='__main__':
-    main()  
+    main()

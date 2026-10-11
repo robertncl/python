@@ -10,12 +10,12 @@ def looking_glass():
         original_write(text[::-1])
 
     sys.stdout.write = reverse_write
-    msg = ''  
+    msg = ''
     try:
         yield 'JABBERWOCKY'
-    except ZeroDivisionError:  
+    except ZeroDivisionError:
         msg = 'Please DO NOT divide by zero!'
     finally:
-        sys.stdout.write = original_write  
+        sys.stdout.write = original_write
         if msg:
-            print(msg)  
+            print(msg)

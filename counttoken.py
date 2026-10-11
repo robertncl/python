@@ -1,5 +1,6 @@
 import tiktoken as tk
 
+
 def count_tokens(string: str, encoding_name: str) -> int:
     # Get the encoding
     encoding = tk.get_encoding(encoding_name)

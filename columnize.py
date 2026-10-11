@@ -1,5 +1,6 @@
 from collections.abc import Sequence
 
+
 def columnize(sequence: Sequence[str], num_columns: int = 0) -> list[tuple[str, ...]]:
     if num_columns == 0:
         num_columns = round(len(sequence) ** .5)

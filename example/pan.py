@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # .........................Series.......................#
 
@@ -102,7 +101,8 @@ print(df.values)
 d = {'Name': pd.Series(['Tom', 'James', 'Ricky', 'Vin', 'Steve', 'Smith', 'Jack',
                         'Lee', 'David', 'Gasper', 'Betina', 'Andres']),
      'Age': pd.Series([25, 26, 25, 23, 30, 29, 23, 34, 40, 30, 51, 46]),
-     'Rating': pd.Series([4.23, 3.24, 3.98, 2.56, 3.20, 4.6, 3.8, 3.78, 2.98, 4.80, 4.10, 3.65])
+     'Rating': pd.Series([4.23, 3.24, 3.98, 2.56, 3.20, 4.6,
+                          3.8, 3.78, 2.98, 4.80, 4.10, 3.65])
      }
 df = pd.DataFrame(d)
 print(df.sum())
@@ -110,7 +110,8 @@ print(df.sum())
 d = {'Name': pd.Series(['Tom', 'James', 'Ricky', 'Vin', 'Steve', 'Smith', 'Jack',
                         'Lee', 'David', 'Gasper', 'Betina', 'Andres']),
      'Age': pd.Series([25, 26, 25, 23, 30, 29, 23, 34, 40, 30, 51, 46]),
-     'Rating': pd.Series([4.23, 3.24, 3.98, 2.56, 3.20, 4.6, 3.8, 3.78, 2.98, 4.80, 4.10, 3.65])
+     'Rating': pd.Series([4.23, 3.24, 3.98, 2.56, 3.20, 4.6,
+                          3.8, 3.78, 2.98, 4.80, 4.10, 3.65])
      }
 df = pd.DataFrame(d)
 print(df.describe(include='all'))
@@ -120,7 +121,9 @@ print(df.describe(include='all'))
 # Using the sort_index() method, by passing the axis arguments and the order of sorting,
 # DataFrame can be sorted. By default, sorting is done on row labels in ascending order.
 
-unsorted_df = pd.DataFrame(np.random.randn(10, 2), index=[1, 4, 6, 2, 3, 5, 9, 8, 0, 7], columns=['col2', 'col1'])
+unsorted_df = pd.DataFrame(np.random.randn(10, 2),
+                           index=[1, 4, 6, 2, 3, 5, 9, 8, 0, 7],
+                           columns=['col2', 'col1'])
 
 sorted_df = unsorted_df.sort_index()
 print(sorted_df)
@@ -131,7 +134,9 @@ print(sorted_df)
 # the sorting can be done on the column labels. By default, axis=0, sort by row.
 # Let us consider the following example to understand the same.
 
-unsorted_df = pd.DataFrame(np.random.randn(10, 2), index=[1, 4, 6, 2, 3, 5, 9, 8, 0, 7], columns=['col2', 'col1'])
+unsorted_df = pd.DataFrame(np.random.randn(10, 2),
+                           index=[1, 4, 6, 2, 3, 5, 9, 8, 0, 7],
+                           columns=['col2', 'col1'])
 sorted_df = unsorted_df.sort_index(axis=1)
 print(sorted_df)
 
@@ -143,7 +148,8 @@ sorted_df = unsorted_df.sort_values(by='col1', kind='mergesort')
 # ...........................SLICING...............................#
 
 df = pd.DataFrame(np.random.randn(8, 4),
-                  index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], columns=['A', 'B', 'C', 'D'])
+                  index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
+                  columns=['A', 'B', 'C', 'D'])
 # Select all rows for multiple columns, say list[]
 print(df.loc[:, ['A', 'C']])
 print(df.loc[['a', 'b', 'f', 'h'], ['A', 'C']])
@@ -169,8 +175,8 @@ print(df.expanding(min_periods=3).mean())
 
 # ........................MISSING DATA............................................#
 
-df = pd.DataFrame(np.random.randn(3, 3), index=['a', 'c', 'e'], columns=['one',
-                                                                         'two', 'three'])
+df = pd.DataFrame(np.random.randn(3, 3), index=['a', 'c', 'e'],
+                  columns=['one', 'two', 'three'])
 
 df = df.reindex(['a', 'b', 'c'])
 
@@ -194,7 +200,8 @@ print(df.dropna(axis=1))
 ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
                      'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
             'Rank': [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
-            'Year': [2014, 2015, 2014, 2015, 2014, 2015, 2016, 2017, 2016, 2014, 2015, 2017],
+            'Year': [2014, 2015, 2014, 2015, 2014, 2015,
+                     2016, 2017, 2016, 2014, 2015, 2017],
             'Points': [876, 789, 863, 673, 741, 812, 756, 788, 694, 701, 804, 690]}
 df = pd.DataFrame(ipl_data)
 

@@ -1,6 +1,5 @@
 class Bird:
     """A base class for birds."""
-    pass
 
 class Duck(Bird):
     """A duck, which is a kind of bird."""

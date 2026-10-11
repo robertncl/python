@@ -1,7 +1,8 @@
 def get_final_line(filename):
     final_line = ''
-    for current_line in open(filename):    
-        final_line = current_line
+    with open(filename) as infile:
+        for current_line in infile:
+            final_line = current_line
     return final_line
- 
+
 print(get_final_line('/etc/passwd'))

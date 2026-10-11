@@ -1,6 +1,6 @@
 def strsort(a_string):
     return ''.join(sorted(a_string))
- 
+
 print(strsort('cbjeaf'))
 
 def sort(numbers: list[int]) -> list[int]:

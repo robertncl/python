@@ -1,6 +1,6 @@
 import random
-from typing import Any, TypeVar
 from collections.abc import Iterable, Sequence
+from typing import Any, TypeVar
 
 from randompick import RandomPicker
 

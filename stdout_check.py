@@ -19,4 +19,3 @@ for char in test_chars:
 
 def stdout_check() -> None:
     """Placeholder for checking stdout."""
-    pass

@@ -1,14 +1,14 @@
 import contextlib
 
 
-@contextlib.contextmanager  
+@contextlib.contextmanager
 def looking_glass():
     import sys
-    original_write = sys.stdout.write  
+    original_write = sys.stdout.write
 
-    def reverse_write(text):  
+    def reverse_write(text):
         original_write(text[::-1])
 
-    sys.stdout.write = reverse_write  
-    yield 'JABBERWOCKY'  
-    sys.stdout.write = original_write  
+    sys.stdout.write = reverse_write
+    yield 'JABBERWOCKY'
+    sys.stdout.write = original_write

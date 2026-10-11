@@ -1,6 +1,6 @@
+from collections.abc import Sequence
 from random import shuffle
 from typing import TypeVar
-from collections.abc import Sequence
 
 T = TypeVar('T')
 
@@ -11,6 +11,6 @@ def sample(population: Sequence[T], size: int) -> list[T]:
     shuffle(result)
     return result[:size]
 
-def sample(items: list[int]) -> int:
+def first_or_zero(items: list[int]) -> int:
     """Return the first item from a list of integers, or 0 if the list is empty."""
     return items[0] if items else 0

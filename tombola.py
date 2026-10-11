@@ -1,33 +1,34 @@
 import abc
 from typing import Any
 
-class Tombola(abc.ABC):  
+
+class Tombola(abc.ABC):
 
     @abc.abstractmethod
-    def load(self, iterable):  
+    def load(self, iterable):
         """Add items from an iterable."""
 
     @abc.abstractmethod
-    def pick(self):  
+    def pick(self):
         """Remove item at random, returning it.
 
         This method should raise `LookupError` when the instance is empty.
         """
 
-    def loaded(self):  
+    def loaded(self):
         """Return `True` if there's at least 1 item, `False` otherwise."""
-        return bool(self.inspect())  
+        return bool(self.inspect())
 
 
     def inspect(self):
         """Return a sorted tuple with the items currently inside."""
         items = []
-        while True:  
+        while True:
             try:
                 items.append(self.pick())
             except LookupError:
                 break
-        self.load(items)  
+        self.load(items)
         return tuple(sorted(items))
 
 def tombola_draw(items: list[Any]) -> Any:

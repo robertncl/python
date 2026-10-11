@@ -1,6 +1,7 @@
 import os
-from openai import AzureOpenAI
 from typing import Any
+
+from openai import AzureOpenAI
 
 client = AzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
@@ -8,7 +9,8 @@ client = AzureOpenAI(
     azure_endpoint="https://rober-m5dm85za-swedencentral.openai.azure.com/"
 )
 
-# This will correspond to the custom name you chose for your deployment when you deployed a model.
+# This will correspond to the custom name you chose for your deployment
+# when you deployed a model.
 # Use a gpt-35-turbo-instruct deployment.
 
 deployment_name = "davinci-002"

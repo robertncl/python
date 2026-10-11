@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Howler"""
- 
+
 import argparse
 import os
 import sys
- 
- 
+
+
 # --------------------------------------------------
 def get_args():
     """
@@ -18,7 +18,8 @@ def get_args():
     Returns:
         argparse.Namespace: An object containing the parsed arguments:
             - text (str): The input text to be converted to uppercase.
-                          If a file path is provided, this will contain the file's contents.
+                          If a file path is provided, this will contain
+                          the file's contents.
             - outfile (str): The name of the output file. If not provided,
                              the program will use standard output.
 
@@ -29,26 +30,27 @@ def get_args():
         description='Howler (upper-case input)',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('text',                                          
+    parser.add_argument('text',
                         metavar='text',
                         type=str,
                         help='Input string or file')
 
-    parser.add_argument('-o',                                            
+    parser.add_argument('-o',
                         '--outfile',
                         help='Output filename',
                         metavar='str',
                         type=str,
                         default='')
 
-    args = parser.parse_args()                                           
+    args = parser.parse_args()
 
-    if os.path.isfile(args.text):                                        
-        args.text = open(args.text).read().rstrip()                      
+    if os.path.isfile(args.text):
+        with open(args.text) as in_fh:
+            args.text = in_fh.read().rstrip()
 
     return args
- 
- 
+
+
 # --------------------------------------------------
 def main():
     """
@@ -67,12 +69,14 @@ def main():
     Returns:
         None
     """
-    args = get_args()                                                   
-    out_fh = open(args.outfile, 'w') if args.outfile else sys.stdout   
-    out_fh.write(args.text.upper() + '\n')                              
-    out_fh.close()
- 
- 
+    args = get_args()
+    if args.outfile:
+        with open(args.outfile, 'w') as out_fh:
+            out_fh.write(args.text.upper() + '\n')
+    else:
+        sys.stdout.write(args.text.upper() + '\n')
+
+
 # --------------------------------------------------
 if __name__ == '__main__':
     main()

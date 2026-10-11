@@ -1,9 +1,9 @@
-from bird import Duck, alert, alert_duck, alert_bird
+from bird import Duck, alert, alert_bird, alert_duck
 
 daffy = Duck()
-alert(daffy)       
-alert_duck(daffy)  
-alert_bird(daffy)  
+alert(daffy)
+alert_duck(daffy)
+alert_bird(daffy)
 
 def daffy(text: str) -> str:
     """Return the input string with all 's' replaced by 'th'."""

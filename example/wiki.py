@@ -1,6 +1,7 @@
 
-import wikipedia as wk
 from bs4 import BeautifulSoup
+
+import wikipedia as wk
 
 
 def wiki():
@@ -35,7 +36,6 @@ def wiki():
         print("Page Link = ", url)
     # print "References : ",references
 
-    pass
 
 
 def fullPage(page):
@@ -76,7 +76,6 @@ def randomWiki():
         print("Page Link = ", url)
     # print "References : ",references
 
-    pass
 
 # if __name__=="__main__":
 #    wiki()

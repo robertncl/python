@@ -1,5 +1,6 @@
 from typing import Any
 
+
 class StackOverflowError(BaseException):
     pass
 

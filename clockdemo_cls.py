@@ -1,11 +1,11 @@
 import time
-from typing import Any
 from collections.abc import Callable
+from typing import Any
 
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
 class clock:
-    """A class-based decorator that prints the elapsed time and arguments of the decorated function."""
+    """Class-based decorator that prints elapsed time and arguments of each call."""
     def __init__(self, fmt: str = DEFAULT_FMT) -> None:
         self.fmt = fmt
 

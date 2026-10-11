@@ -86,9 +86,10 @@ Tests of hashing:
 
 """
 
-from array import array
 import math
+from array import array
 from typing import Any
+
 
 class Vector2d:
     typecode = 'd'

@@ -1,5 +1,6 @@
 import os
-from mistralai import Mistral, UserMessage, SystemMessage
+
+from mistralai import Mistral, SystemMessage, UserMessage
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
