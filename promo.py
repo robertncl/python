@@ -1,4 +1,5 @@
 from collections.abc import Callable
+
 from order import Order
 
 Promotion = Callable[[Order], float]

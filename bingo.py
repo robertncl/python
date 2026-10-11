@@ -1,10 +1,19 @@
 import random
+from collections.abc import Iterable
 from typing import Any
 
-class BingoCage:
+from tombola import Tombola
+
+
+class BingoCage(Tombola):
     """A bingo cage that shuffles and picks items."""
-    def __init__(self, items: list[Any]) -> None:
-        self._items = list(items)
+    def __init__(self, items: Iterable[Any]) -> None:
+        self._items: list[Any] = []
+        self.load(items)
+
+    def load(self, items: Iterable[Any]) -> None:
+        """Add items to the cage and reshuffle."""
+        self._items.extend(items)
         random.shuffle(self._items)
 
     def pick(self) -> Any:

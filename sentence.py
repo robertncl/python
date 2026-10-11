@@ -9,17 +9,17 @@ class Sentence:
 
     def __init__(self, text: str) -> None:
         self.text = text
-        self.words = RE_WORD.findall(text)  
+        self.words = RE_WORD.findall(text)
 
     def __getitem__(self, index: int) -> str:
-        return self.words[index]  
+        return self.words[index]
 
-    def __len__(self) -> int:  
+    def __len__(self) -> int:
         return len(self.words)
 
     def __repr__(self) -> str:
-        return f'Sentence({reprlib.repr(self.text)})'  
+        return f'Sentence({reprlib.repr(self.text)})'
 
 def sentence(words: list[str]) -> str:
-    """Return a sentence formed by joining a list of words with spaces and capitalizing the first letter."""
-    return ' '.join(words).capitalize() + '.'  
+    """Join words with spaces into a sentence with its first letter capitalized."""
+    return ' '.join(words).capitalize() + '.'

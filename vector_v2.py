@@ -188,12 +188,12 @@ Tests of ``format()`` with spherical coordinates in 2D, 3D and 4D::
     '<1.00000, 1.57080, 0.00000, 0.00000>'
 """
 
-from array import array
-import reprlib
-import math
 import functools
+import itertools
+import math
 import operator
-import itertools  
+import reprlib
+from array import array
 from typing import Any
 
 
@@ -253,7 +253,7 @@ class Vector:
         msg = '{.__name__!r} object has no attribute {!r}'
         raise AttributeError(msg.format(cls, name))
 
-    def angle(self, n):  
+    def angle(self, n):
         r = math.sqrt(sum(x * x for x in self[n:]))
         a = math.atan2(r, self[n-1])
         if (n == len(self) - 1) and (self[-1] < 0):
@@ -261,20 +261,20 @@ class Vector:
         else:
             return a
 
-    def angles(self):  
+    def angles(self):
         return (self.angle(n) for n in range(1, len(self)))
 
     def __format__(self, fmt_spec=''):
         if fmt_spec.endswith('h'):  # hyperspherical coordinates
             fmt_spec = fmt_spec[:-1]
             coords = itertools.chain([abs(self)],
-                                     self.angles())  
-            outer_fmt = '<{}>'  
+                                     self.angles())
+            outer_fmt = '<{}>'
         else:
             coords = self
-            outer_fmt = '({})'  
-        components = (format(c, fmt_spec) for c in coords)  
-        return outer_fmt.format(', '.join(components))  
+            outer_fmt = '({})'
+        components = (format(c, fmt_spec) for c in coords)
+        return outer_fmt.format(', '.join(components))
 
     @classmethod
     def frombytes(cls, octets):

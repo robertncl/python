@@ -1,4 +1,5 @@
-import random, sys
+import random
+import sys
 
 print('ROCK, PAPER, SCISSORS')
 
@@ -9,7 +10,6 @@ ties = 0
 
 def rpsgame() -> None:
     """Placeholder for rock-paper-scissors game logic."""
-    pass
 
 while True: # The main game loop.
     print(f'{wins} Wins, {losses} Losses, {ties} Ties')
@@ -46,21 +46,9 @@ while True: # The main game loop.
     if playerMove == computerMove:
         print('It is a tie!')
         ties = ties + 1
-    elif playerMove == 'r' and computerMove == 's':
+    elif (playerMove, computerMove) in (('r', 's'), ('p', 'r'), ('s', 'p')):
         print('You win!')
         wins = wins + 1
-    elif playerMove == 'p' and computerMove == 'r':
-        print('You win!')
-        wins = wins + 1
-    elif playerMove == 's' and computerMove == 'p':
-        print('You win!')
-        wins = wins + 1
-    elif playerMove == 'r' and computerMove == 'p':
-        print('You lose!')
-        losses = losses + 1
-    elif playerMove == 'p' and computerMove == 's':
-        print('You lose!')
-        losses = losses + 1
-    elif playerMove == 's' and computerMove == 'r':
+    elif (playerMove, computerMove) in (('r', 'p'), ('p', 's'), ('s', 'r')):
         print('You lose!')
         losses = losses + 1

@@ -7,7 +7,7 @@ class CreditCard:
 
     @property
     def company(self):
-        comp = None
+        comp = 'Unknown'
         if str(self.card_no).startswith('4'):
             comp = 'Visa Card'
         elif str(self.card_no).startswith(('50', '67', '58', '63',)):
@@ -32,7 +32,8 @@ class CreditCard:
             message = "First check : Valid in terms of length."
 
         else:
-            message = "First check : Check Card number once again it must be of 13 or 16 digits long."
+            message = ("First check : Check Card number once again "
+                       "it must be of 13 or 16 digits long.")
         return message
 
     def validate(self):
@@ -68,13 +69,14 @@ class CreditCard:
         return cls(card_to_check)
 
 
-card_number = input()
-card = CreditCard.set_card(card_number)
-print(card.company)
-print('Card : ', card.card_no)
-print(card.first_check())
-print(card.checksum)
-print(card.validate())
+if __name__ == '__main__':
+    card_number = input()
+    card = CreditCard.set_card(card_number)
+    print(card.company)
+    print('Card : ', card.card_no)
+    print(card.first_check())
+    print(card.checksum)
+    print(card.validate())
 
 # 79927398713
 # 4388576018402626

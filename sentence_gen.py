@@ -16,12 +16,12 @@ class Sentence:
         return f'Sentence({reprlib.repr(self.text)})'
 
     def __iter__(self) -> Iterator[str]:
-        yield from self.words  
-        return  
+        yield from self.words
+        return
 
 def sentence_gen(words: list[str]) -> Iterator[str]:
     """Yield each word in the list as a sentence (capitalized and with a period)."""
     for word in words:
         yield word.capitalize() + '.'
 
-# done! 
+# done!

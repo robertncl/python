@@ -1,9 +1,10 @@
 import time
-from typing import Any
 from collections.abc import Callable
+from typing import Any
+
 
 def clock(func: Callable) -> Callable:
-    """A simple decorator that prints the elapsed time and arguments of the decorated function."""
+    """Simple decorator that prints the elapsed time and arguments of each call."""
     def clocked(*args: Any) -> Any:
         t0 = time.perf_counter()
         result = func(*args)
@@ -12,4 +13,4 @@ def clock(func: Callable) -> Callable:
         arg_str = ', '.join(repr(arg) for arg in args)
         print(f'[{elapsed:0.8f}s] {name}({arg_str}) -> {result!r}')
         return result
-    return clocked  
+    return clocked

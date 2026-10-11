@@ -1,11 +1,11 @@
 import time
-from typing import Any
 from collections.abc import Callable
+from typing import Any
 
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
 def clock(fmt: str = DEFAULT_FMT) -> Callable:
-    """A decorator factory that prints the elapsed time and arguments of the decorated function."""
+    """Decorator factory that prints the elapsed time and arguments of each call."""
     def decorate(func: Callable) -> Callable:
         def clocked(*_args: Any) -> Any:
             t0 = time.perf_counter()

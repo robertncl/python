@@ -8,12 +8,12 @@ def diff(a, b):
 
 def simpleColor(r, g, b):
     """Return the general color name closest to the given RGB values."""
-    r = int(r)
-    g = int(g)
-    b = int(b)
-    bg = b - g  # clarified variable
-    ir = r - b  # clarified variable
     try:
+        r = int(r)
+        g = int(g)
+        b = int(b)
+        bg = b - g  # clarified variable
+        ir = r - b  # clarified variable
         #ROJO --------------------------------------------------
         if r > g and r > b:
 
@@ -65,9 +65,7 @@ def simpleColor(r, g, b):
 
             else: # g y b iguales
                 if rg > 20:
-                    if r>=100 and b <60:
-                        return "ROJO"
-                    elif r >=100:
+                    if r>=100 and b <60 or r >=100:
                         return "ROJO"
                     else:
                         return "MARRON"
@@ -157,9 +155,7 @@ def simpleColor(r, g, b):
                             return "AZUL"
             else: #r y g iguales
                 if bg > 20:
-                    if r>=100 and b <60:
-                        return "ROJO"
-                    elif r >=100:
+                    if r>=100 and b <60 or r >=100:
                         return "ROJO"
                     else:
                         return "MARRON"
@@ -171,13 +167,14 @@ def simpleColor(r, g, b):
         else:
             return "GRIS"
 
-    except Exception:
+    except (TypeError, ValueError):
         return "Not Color"
 
 
-# ---------------------------------------------------------------------------------------------------
-# Puedes probar asi: python primary_colors.py 120,0,0 , esto resultara en un ROJO como respuesta
-# --------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# Puedes probar asi: python primary_colors.py 120,0,0 ,
+# esto resultara en un ROJO como respuesta
+# -----------------------------------------------------------------------------
 if __name__=='__main__':
     import sys
     print(simpleColor(sys.argv[1],sys.argv[2],sys.argv[3]))

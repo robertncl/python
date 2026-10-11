@@ -1,4 +1,6 @@
-import time, sys
+import sys
+import time
+
 indent = 0 # How many spaces to indent.
 indentIncreasing = True # Whether the indentation is increasing or not.
 

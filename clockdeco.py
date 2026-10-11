@@ -1,11 +1,11 @@
-import time
 import functools
-from typing import Any
+import time
 from collections.abc import Callable
+from typing import Any
 
 
 def clock(func: Callable) -> Callable:
-    """A decorator that prints the elapsed time and arguments of the decorated function."""
+    """Decorator that prints the elapsed time and arguments of each call."""
     @functools.wraps(func)
     def clocked(*args: Any, **kwargs: Any) -> Any:
         t0 = time.perf_counter()

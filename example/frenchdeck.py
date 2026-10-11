@@ -1,10 +1,11 @@
 import collections
+from typing import ClassVar
 
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
 class FrenchDeck:
-    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
-    suits = 'spades diamonds clubs hearts'.split()
+    ranks: ClassVar[list[str]] = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits: ClassVar[list[str]] = ['spades', 'diamonds', 'clubs', 'hearts']
 
     def __init__(self):
         self._cards = [Card(rank, suit) for suit in self.suits

@@ -1,5 +1,6 @@
 from typing import Any
 
+
 def flatten(nested_list: list[Any]) -> list[Any]:
     """Flatten a nested list into a single list."""
     result = []

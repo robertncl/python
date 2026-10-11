@@ -1,4 +1,5 @@
 import os
+
 from cohere import Client
 
 token = os.environ["GITHUB_TOKEN"]

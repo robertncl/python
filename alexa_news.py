@@ -19,7 +19,8 @@ def get_headlines():
     url = "https://reddit.com/r/worldnews/.json?limit=10"
     html = sess.get(url)
     data = json.loads(html.content.decode("utf-8"))
-    titles = [unidecode.unidecode(listing['data']['title']) for listing in data['data']['children']]
+    titles = [unidecode.unidecode(listing['data']['title'])
+              for listing in data['data']['children']]
     titles = '... '.join([i for i in titles])
     return titles
 
