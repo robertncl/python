@@ -1,7 +1,6 @@
 
-from bs4 import BeautifulSoup
-
 import wikipedia as wk
+from bs4 import BeautifulSoup
 
 
 def wiki():
@@ -39,8 +38,7 @@ def wiki():
 
 
 def fullPage(page):
-    soup = BeautifulSoup(page.content, 'lxml')
-    return soup
+    return BeautifulSoup(page.content, 'lxml')
 
 
 def randomWiki():

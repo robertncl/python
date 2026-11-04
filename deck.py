@@ -1,7 +1,10 @@
-import collections
-from typing import ClassVar
+from typing import ClassVar, NamedTuple
 
-Card = collections.namedtuple('Card', ['rank', 'suit'])
+
+class Card(NamedTuple):
+    rank: str
+    suit: str
+
 
 class FrenchDeck:
     ranks: ClassVar[list[str]] = [str(n) for n in range(2, 11)] + list('JQKA')

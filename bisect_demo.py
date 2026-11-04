@@ -19,10 +19,7 @@ def insert_sorted(a: list[int], x: int) -> None:
     bisect.insort(a, x)
 
 if __name__ == '__main__':
-    if sys.argv[-1] == 'left':
-        bisect_fn = bisect.bisect_left
-    else:
-        bisect_fn = bisect.bisect
+    bisect_fn = bisect.bisect_left if sys.argv[-1] == 'left' else bisect.bisect
 
     print('DEMO:', bisect_fn.__name__)
     print('haystack ->', ' '.join(f'{n:2}' for n in HAYSTACK))

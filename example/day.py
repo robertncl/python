@@ -7,8 +7,7 @@ import time  # module of python to parse dates
 
 def process_date(user_input):
     user_input=re.sub(r"/", " ", user_input) #substitute / with space
-    user_input=re.sub(r"-", " ", user_input) #substitute - with space
-    return user_input
+    return re.sub(r"-", " ", user_input) #substitute - with space
 
 def find_day(date):
     # returns an integer corresponding to the day of the week

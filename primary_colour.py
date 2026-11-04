@@ -29,51 +29,40 @@ def simpleColor(r, g, b):
                 if gb < rg: #Verde mas cerca de Azul
                     if gb >=30 and rg >= 80:
                         return "NARANJA"
-                    elif gb<=20 and rg >= 80:
+                    if gb<=20 and rg >= 80:
                         return "ROJO"
-                    elif gb<=20 and b > 175:
+                    if gb<=20 and b > 175:
                         return "CREMA"
 
-                    else:
-                        return "CHOCOLATE"
-                else: #Verde mas cerca de Rojo
-                    if rg > 60:
-                        return "NARANJA*"
-                    elif r > 125:
-                        return "AMARILLO"
-                    else:
-                        return  "COCHOLATE"
-            elif rg > rb: #Azul mayor que verde
+                    return "CHOCOLATE"
+                if rg > 60:
+                    return "NARANJA*"
+                if r > 125:
+                    return "AMARILLO"
+                return  "COCHOLATE"
+            if rg > rb: #Azul mayor que verde
                 if bg < rb: #Verde mas cerca de Azul
                     if gb < 60:
                         if r >150:
                             return "ROJO 2"
-                        else:
-                            return "MARRON"
-                    elif g > 125:
-                        return "ROSADO"
-                    else:
-                        return "ROJO 3"
-                else: #Verde mas cerca de Rojo
-                    if rb < 60:
-                        if r > 160:
-                            return "ROSADO*"
-                        else:
-                            return  "ROJO"
-                    else:
-                        return "ROJO"
-
-            else: # g y b iguales
-                if rg > 20:
-                    if r>=100 and b <60 or r >=100:
-                        return "ROJO"
-                    else:
                         return "MARRON"
+                    if g > 125:
+                        return "ROSADO"
+                    return "ROJO 3"
+                if rb < 60:
+                    if r > 160:
+                        return "ROSADO*"
+                    return  "ROJO"
+                return "ROJO"
 
-                else:
-                    return "GRIS"
+            if rg > 20:
+                if (r>=100 and b <60) or r >=100:
+                    return "ROJO"
+                return "MARRON"
+
+            return "GRIS"
         # VERDE ---------------------------------------------------
-        elif g > r and g > b:
+        if g > r and g > b:
             gb = diff(g,b) #distancia verde a azul
             gr = diff(g,r) #distancia verde a rojo
 
@@ -87,30 +76,26 @@ def simpleColor(r, g, b):
 
                     if rb>=150 and gr <=20:
                         return "AMARILLO"
-                    else:
-                        return "VERDE"
-                else: #...Verde
                     return "VERDE"
+                #...Verde
+                return "VERDE"
 
-            elif r < b: #AZUL > ROJO
+            if r < b: #AZUL > ROJO
                 if gb < gr: #Verde con Azul
 
                     if gb<=20:
                         return "TURQUESA"
-                    else:
-                        return "VERDE"
-                else: #...Verde
                     return "VERDE"
+                #...Verde
+                return "VERDE"
 
-            else: #r y b iguales
-                if gb > 10:
-                    return "VERDE"
-                else:
-                    return "GRIS"
+            if gb > 10:
+                return "VERDE"
+            return "GRIS"
 
 
         #AZUL ------------------------------------------------------
-        elif b > r and b > g:
+        if b > r and b > g:
             bg = diff(b,g) #distancia azul a verde
             br = diff(b,r) #distancia azul a rojo
 
@@ -123,44 +108,34 @@ def simpleColor(r, g, b):
                 if bg < rg: #Azul con Verde
                     if bg<=20:
                         return "TURQUESA"
-                    else:
-                        return "CELESTE"
-                else: #...Azul
-                    if rg <= 20:
-                        if r >= 150:
-                            return "LILA"
-                        else:
-                            return "AZUL *************"
-                    else:
-                        return "AZUL"
+                    return "CELESTE"
+                if rg <= 20:
+                    if r >= 150:
+                        return "LILA"
+                    return "AZUL *************"
+                return "AZUL"
 
-            elif g > r: #  VERDE > ROJO
+            if g > r: #  VERDE > ROJO
                 if br < rg: #Azul con rojo
                     if br <=20:
                         if r > 150 and g < 75:
                             return "ROSADO FIUSHA"
-                        elif ir > 150:
+                        if ir > 150:
                             return "LILA"
-                        else:
-                            return "MORADO"
-                    else:
                         return "MORADO"
+                    return "MORADO"
 
 
-                else: #...Azul
-                    if rg <= 20:
-                        if bg <=20:
-                            return "GRIS"
-                        else:
-                            return "AZUL"
-            else: #r y g iguales
-                if bg > 20:
-                    if r>=100 and b <60 or r >=100:
-                        return "ROJO"
-                    else:
-                        return "MARRON"
-                else:
-                    return "GRIS"
+                if rg <= 20:
+                    if bg <=20:
+                        return "GRIS"
+                    return "AZUL"
+            elif bg > 20:
+                if (r>=100 and b <60) or r >=100:
+                    return "ROJO"
+                return "MARRON"
+            else:
+                return "GRIS"
 
 
         # IGUALES---------------------------------------

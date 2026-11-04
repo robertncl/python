@@ -35,10 +35,7 @@ class Order:  # the Context
         return self.__total
 
     def due(self) -> float:
-        if self.promotion is None:
-            discount = 0.0
-        else:
-            discount = self.promotion.discount(self)
+        discount = 0.0 if self.promotion is None else self.promotion.discount(self)
         return self.total() - discount
 
     def __repr__(self):

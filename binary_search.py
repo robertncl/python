@@ -24,7 +24,7 @@ def binarySearch(arr, left, right, x):
             return mid
 
         # If x is greater, ignore left half
-        elif arr[mid] < x:
+        if arr[mid] < x:
             # move left past the middle so the next search starts from there
             left = mid + 1
 

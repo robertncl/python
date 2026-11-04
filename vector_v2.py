@@ -220,7 +220,7 @@ class Vector:
 
     def __eq__(self, other):
         return (len(self) == len(other) and
-                all(a == b for a, b in zip(self, other)))
+                all(a == b for a, b in zip(self, other, strict=True)))
 
     def __hash__(self):
         hashes = (hash(x) for x in self)
@@ -258,8 +258,7 @@ class Vector:
         a = math.atan2(r, self[n-1])
         if (n == len(self) - 1) and (self[-1] < 0):
             return math.pi * 2 - a
-        else:
-            return a
+        return a
 
     def angles(self):
         return (self.angle(n) for n in range(1, len(self)))

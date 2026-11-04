@@ -3,11 +3,7 @@ import random
 
 def create_password_generator(characters):
     def create_password(length):
-        output = []
-
-        for i in range(length):
-            output.append(random.choice(characters))
-        return ''.join(output)
+        return ''.join(random.choice(characters) for _ in range(length))
     return create_password
 
 alpha_password = create_password_generator('abcdef')
