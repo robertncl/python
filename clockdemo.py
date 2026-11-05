@@ -24,5 +24,5 @@ if __name__ == '__main__':
     def snooze(seconds: float) -> None:
         time.sleep(seconds)
 
-    for i in range(3):
+    for _ in range(3):
         snooze(.123)

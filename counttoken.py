@@ -9,8 +9,7 @@ def count_tokens(string: str, encoding_name: str) -> int:
     encoded_string = encoding.encode(string)
 
     # Count the number of tokens
-    num_tokens = len(encoded_string)
-    return num_tokens
+    return len(encoded_string)
 
 # Define the input string
 prompt = 'I have a white dog named Champ asass'

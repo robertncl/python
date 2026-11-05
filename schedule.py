@@ -4,7 +4,7 @@
 Author : Mohit Kumar
 Job Sequencing Problem implemented in python
 """
-from collections import namedtuple
+from typing import NamedTuple
 
 
 class Scheduling:
@@ -85,7 +85,11 @@ class Scheduling:
 
 
 def main():
-    job = namedtuple("job", "job_id deadline profit")
+    class job(NamedTuple):
+        job_id: int
+        deadline: int
+        profit: int
+
     jobs = [
         job(0, 0, 0),
         job(1, 2, 46),
@@ -102,7 +106,7 @@ def main():
         current_job.extend((jobs[i].deadline, jobs[i].profit, jobs[i].job_id))
         midresult.append(current_job)
     midresult.sort(key=lambda k: (k[0], -k[1]))
-    (deadline, profit, jobs) = map(list, zip(*midresult))
+    (deadline, profit, jobs) = map(list, zip(*midresult, strict=False))
 
     scheduling_jobs = Scheduling(jobs)
     scheduled_jobs = scheduling_jobs.schedule(len(jobs), deadline)
@@ -111,7 +115,7 @@ def main():
     finalprofit = []
     finaldl = []
 
-    for i, item in enumerate(scheduled_jobs):
+    for item in scheduled_jobs:
         jobsindex = jobs.index(item)
         finalprofit.append(profit[jobsindex])
         finaldl.append(deadline[jobsindex])

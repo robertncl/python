@@ -21,8 +21,7 @@ def get_headlines():
     data = json.loads(html.content.decode("utf-8"))
     titles = [unidecode.unidecode(listing['data']['title'])
               for listing in data['data']['children']]
-    titles = '... '.join([i for i in titles])
-    return titles
+    return '... '.join(titles)
 
 
 @app.route("/")
@@ -50,4 +49,4 @@ def no_intent():
 
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    app.run(port=8000)

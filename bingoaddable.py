@@ -10,8 +10,7 @@ class AddableBingoCage(BingoCage):
     def __add__(self, other: Any) -> 'AddableBingoCage':
         if isinstance(other, Tombola):
             return AddableBingoCage(self.inspect() + other.inspect())
-        else:
-            return NotImplemented
+        return NotImplemented
 
     def __iadd__(self, other: Any) -> Self:
         if isinstance(other, Tombola):
@@ -22,6 +21,6 @@ class AddableBingoCage(BingoCage):
             except TypeError:
                 self_cls = type(self).__name__
                 msg = "right operand in += must be {!r} or an iterable"
-                raise TypeError(msg.format(self_cls))
+                raise TypeError(msg.format(self_cls)) from None
         self.load(other_iterable)
         return self

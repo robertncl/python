@@ -66,13 +66,13 @@ def test_stack() -> None:
 
     try:
         _ = stack.pop()
-        assert False  # This should not happen
+        raise AssertionError('should not happen')
     except IndexError:
         assert True  # This should happen
 
     try:
         _ = stack.peek()
-        assert False  # This should not happen
+        raise AssertionError('should not happen')
     except IndexError:
         assert True  # This should happen
 
@@ -92,7 +92,7 @@ def test_stack() -> None:
 
     try:
         stack.push(200)
-        assert False  # This should not happen
+        raise AssertionError('should not happen')
     except StackOverflowError:
         assert True  # This should happen
 

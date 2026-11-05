@@ -53,12 +53,7 @@ class CreditCard:
             else:
                 sum_ += int(crd_no[i])
 
-        if sum_ % 10 == 0:
-            response = "Valid Card"
-        else:
-            response = 'Invalid Card'
-
-        return response
+        return "Valid Card" if sum_ % 10 == 0 else 'Invalid Card'
 
     @property
     def checksum(self):

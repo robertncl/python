@@ -21,7 +21,7 @@ class BingoCage(Tombola):
         try:
             return self._items.pop()
         except IndexError:
-            raise LookupError('pick from empty BingoCage')
+            raise LookupError('pick from empty BingoCage') from None
 
     def __call__(self) -> Any:
         """Allow the cage to be called to pick an item."""

@@ -1,25 +1,21 @@
 import random
 
+ANSWERS = {
+    1: 'It is certain',
+    2: 'It is decidedly so',
+    3: 'Yes',
+    4: 'Reply hazy try again',
+    5: 'Ask again later',
+    6: 'Concentrate and ask again',
+    7: 'My reply is no',
+    8: 'Outlook not so good',
+    9: 'Very doubtful',
+}
+
 
 def getAnswer(answerNumber):
-    if answerNumber == 1:
-        return 'It is certain'
-    elif answerNumber == 2:
-        return 'It is decidedly so'
-    elif answerNumber == 3:
-        return 'Yes'
-    elif answerNumber == 4:
-        return 'Reply hazy try again'
-    elif answerNumber == 5:
-        return 'Ask again later'
-    elif answerNumber == 6:
-        return 'Concentrate and ask again'
-    elif answerNumber == 7:
-        return 'My reply is no'
-    elif answerNumber == 8:
-        return 'Outlook not so good'
-    elif answerNumber == 9:
-        return 'Very doubtful'
+    return ANSWERS.get(answerNumber)
+
 
 r = random.randint(1, 9)
 fortune = getAnswer(r)

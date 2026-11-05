@@ -28,10 +28,7 @@ def clip(text: str, max_len: int = 80) -> str:
     end = None
     if len(text) > max_len:
         space_before = text.rfind(' ', 0, max_len)
-        if space_before >= 0:
-            end = space_before
-        else:
-            end = max_len
+        end = space_before if space_before >= 0 else max_len
     return text[:end].rstrip() if end else text
 
 if __name__ == '__main__':

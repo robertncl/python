@@ -31,15 +31,15 @@ print(str(args.f).capitalize()+" directory is created.")
 #Defining all global variables
 df = []
 total = 0
-dict , final , img_list = {} , [] , []
+dataset , final , img_list = {} , [] , []
 
 #Create dataframe and save it as an excel file
 def createDataSet(val = 0 , data = None) :
          if data is None:
              data = []
-         dict[len(data)] = data
-         if val != 0 and val == max(dict.keys()) :
-                 final_df = pd.DataFrame(dict[val],columns=["Blue","Green","Red"])
+         dataset[len(data)] = data
+         if val != 0 and val == max(dataset.keys()) :
+                 final_df = pd.DataFrame(dataset[val],columns=["Blue","Green","Red"])
                  final_df.to_excel("Image_sort/"+str(args.f)+"/"+"output.xlsx")
 
 
@@ -133,13 +133,11 @@ def main() :
         #For the specific row , if any of the values are zero
         #it gets sorted with color_n
         if not np.all(np.asarray(color)) :
-                    for ind , i in enumerate(color) :
-                        #Accessing every list within color
-                        #Added to color_n if any of the element in the list is non-zero
-                        #and their sum is less than threshold  value
-
-                        if np.any(np.asarray(i)) and sum(i) < thresh :
-                            color_n.append(i)
+                    #Accessing every list within color
+                    #Added to color_n if any of the element in the list is non-zero
+                    #and their sum is less than threshold  value
+                    color_n.extend(i for i in color
+                                   if np.any(np.asarray(i)) and sum(i) < thresh)
 
                     color_n.sort(key=lambda bgr : step(bgr,8)) #step sorting
                     _band , img = generateColors(color_n,img,row)

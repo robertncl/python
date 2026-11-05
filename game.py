@@ -8,9 +8,9 @@ HEIGHT = 20
 
 # Create a list of list for the cells:
 nextCells = []
-for x in range(WIDTH):
+for _ in range(WIDTH):
     column = [] # Create a new column.
-    for y in range(HEIGHT):
+    for _ in range(HEIGHT):
         if random.randint(0, 1) == 0:
             column.append('#') # Add a living cell.
         else:
@@ -57,8 +57,7 @@ while True: # Main program loop.
                 numNeighbors += 1 # Bottom-right neighbor is alive.
 
             # Set cell based on Conway's Game of Life rules:
-            if currentCells[x][y] == '#' and (numNeighbors == 2 or
-numNeighbors == 3):
+            if currentCells[x][y] == '#' and numNeighbors in (2, 3):
                 # Living cells with 2 or 3 neighbors stay alive:
                 nextCells[x][y] = '#'
             elif currentCells[x][y] == ' ' and numNeighbors == 3:
